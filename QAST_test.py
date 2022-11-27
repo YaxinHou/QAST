@@ -16,7 +16,7 @@ from imblearn.combine import SMOTEENN, SMOTETomek
 from imblearn.ensemble import EasyEnsembleClassifier
 
 from utils.transformer import DataTransformer
-from utils.model import Generator, Discriminator, Classify, Truncated_normal, Label_sampel
+from model.model import Generator, Discriminator, Classify, Truncated_normal, Label_sampel
 
 
 def get_log(log_path, logging_name):

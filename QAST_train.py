@@ -20,7 +20,7 @@ from imblearn.combine import SMOTEENN, SMOTETomek
 from imblearn.ensemble import EasyEnsembleClassifier
 
 from utils.transformer import DataTransformer
-from utils.model import Generator, Discriminator, Classify, Truncated_normal, Label_sampel
+from model.model import Generator, Discriminator, Classify, Truncated_normal, Label_sampel
 
 
 def mixup_data(feature, label, per_class_ids, min_class_id, sim_min_class_id):
