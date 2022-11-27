@@ -173,10 +173,10 @@ if __name__ == '__main__':
     args.model_dir = './model/stage-1' + os.sep + model_name
 
     if not os.path.exists(args.model_dir):
-        os.mkdir(args.model_dir)
+        os.makedirs(args.model_dir)
 
     if not os.path.exists(args.save_dir):
-        os.mkdir(args.save_dir)
+        os.makedirs(args.save_dir)
 
     df = pd.read_excel(filepath, index_col=None, header=None, sheet_name='Sheet1')
     data = np.array(df)
