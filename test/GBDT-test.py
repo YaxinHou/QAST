@@ -67,6 +67,9 @@ if __name__ == '__main__':
 
     args = ags_parse()
 
+    if not os.path.exists('./GBDT_LOG/'):
+        os.makedirs('./GBDT_LOG/')
+
     logger = get_log('./GBDT_LOG/log-GBDT.txt', 'QAST')
 
     # the path of train and test data
