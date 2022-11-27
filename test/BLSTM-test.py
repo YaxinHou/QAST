@@ -139,6 +139,9 @@ if __name__ == '__main__':
     min_class = all_min_class_id[f]
     data_name = file.split('.')[0]
 
+    if not os.path.exists('./BLSTM_LOG/'):
+        os.makedirs('./BLSTM_LOG/')
+
     log_filename = './BLSTM_LOG/re_log-BLSTM-' + str(data_name) + '.txt'
     log_name = 'QAST-result-' + str(data_name)
     result_logger = get_log(log_filename, log_name)
