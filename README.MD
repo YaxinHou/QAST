@@ -8,7 +8,7 @@ Chongsheng Zhang, Yaxin Hou, Ke Chen, Shuang Cao, Gaojuan Fan, Ji Liu. Quality-A
  
 This work (QAST) aims to generate realistic samples for the rare classes in a relational data. In fact, it has been a critical concern on how to utilize GAN to generate samples that are useful for imbalance learning, i.e., the generated synthetic samples should be useful for improving the imbalance learning performance. 
 
-![sample results](utils/model.png)
+![sample results](model/model.png)
 
 Abstract: Data scarcity is a very common real-world problem that poses a major challenge to data-driven analytics. Although a lot of data-balancing approaches have been proposed to mitigate this problem, they may drop some useful information or fall into the overfitting problem. Generative Adversarial Network (GAN) based data synthesis methods can alleviate such a problem but lack of quality control over the generated samples. Moreover, the latent associations between the attribute set and the class labels in a relational data cannot be easily captured by a vanilla GAN. In light of this, we introduce an end-to-end self-training scheme (namely, Quality-Aware Self-Training) for rare relational data synthesis, which generates labeled synthetic data via pseudo labeling on GAN-based synthesis. We design a semantic pseudo labeling module to first control the quality of the generated features/samples, then calibrate their semantic labels via a classifier committee consisting of multiple pre-trained shallow classifiers. The high-confident generated samples with calibrated pseudo labels are then fed into a semantic classification network as augmented samples for self-training. We conduct extensive experiments on 20 benchmark datasets of different domains, including 14 industrial datasets. The results show that our method significantly outperforms the comparative methods, including two recent GAN-based data synthesis schemes.
 
@@ -36,6 +36,8 @@ All codes are written by Python 3.8 with:
    │   └──spilted_data
    │
    ├──model
+   │   ├──model.png
+   │   ├──model.py
    │   ├──stage-1
    │   └──stage-2
    │
@@ -50,8 +52,6 @@ All codes are written by Python 3.8 with:
    │   └──GBDT-test.py
    │   
    ├──utils
-   │   ├──model.png
-   │   ├──model.py
    │   ├──split_data.py
    │   └──transformer.py 
    │
