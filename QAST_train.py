@@ -14,6 +14,7 @@ import torch.nn.functional as F
 
 from sklearn.svm import SVC, LinearSVC
 from sklearn.model_selection import StratifiedKFold
+from sklearn.ensemble import GradientBoostingClassifier as dbdt
 
 from imblearn.over_sampling import SMOTE, ADASYN
 from imblearn.combine import SMOTEENN, SMOTETomek
@@ -297,6 +298,13 @@ if __name__ == '__main__':
     # X_resampled, y_resampled = ADASYN(n_neighbors=3, sampling_strategy='minority').fit_resample(t, l)
     # clf_ada = model_linsvc3.fit(X_resampled, y_resampled)
 
+    t = train.clone()
+    l = label.clone()
+    gbdt1 = dbdt()
+    smote_enn = SMOTEENN(smote=SMOTE(k_neighbors=3), random_state=0)
+    X_resampled, y_resampled = smote_enn.fit_resample(t, l)
+    clf_ada = gbdt1.fit(X_resampled, y_resampled)
+
     # 5.SMOTEENN + LinearSVC
     t = train.clone()
     l = label.clone()
@@ -566,9 +574,9 @@ if __name__ == '__main__':
                                           dim=1)
             smo_pre_one_hot = F.one_hot(smo_pre.type(torch.int64), num_classes=label_nums)
 
-            # ada_pre = torch.from_numpy(clf_ada.predict(gen_samples.detach()))
-            # ada_pre_score = torch.softmax(torch.from_numpy(clf_ada.decision_function(gen_samples.detach())), dim=1)
-            # ada_pre_one_hot = F.one_hot(ada_pre.type(torch.int64), num_classes=label_nums)
+            ada_pre = torch.from_numpy(clf_ada.predict(gen_samples.detach()))
+            ada_pre_score = torch.softmax(torch.from_numpy(clf_ada.decision_function(gen_samples.detach())), dim=1)
+            ada_pre_one_hot = F.one_hot(ada_pre.type(torch.int64), num_classes=label_nums)
 
             smoenn_pre = torch.from_numpy(clf_smoenn.predict(gen_samples.detach()))
             smoenn_pre_score = torch.softmax(
@@ -814,9 +822,9 @@ if __name__ == '__main__':
         smo_pre_score = torch.softmax(torch.from_numpy(clf_smo.decision_function(smo_te_x.detach())), dim=1)
         smo_pre_one_hot = F.one_hot(smo_pre.type(torch.int64), num_classes=label_nums)
 
-        # ada_pre = torch.from_numpy(clf_ada.predict(smo_te_x.detach()))
-        # ada_pre_score = torch.softmax(torch.from_numpy(clf_ada.decision_function(smo_te_x.detach())), dim=1)
-        # ada_pre_one_hot = F.one_hot(ada_pre.type(torch.int64), num_classes=label_nums)
+        ada_pre = torch.from_numpy(clf_ada.predict(smo_te_x.detach()))
+        ada_pre_score = torch.softmax(torch.from_numpy(clf_ada.decision_function(smo_te_x.detach())), dim=1)
+        ada_pre_one_hot = F.one_hot(ada_pre.type(torch.int64), num_classes=label_nums)
 
         smoenn_pre = torch.from_numpy(clf_smoenn.predict(smo_te_x.detach()))
         smoenn_pre_score = torch.softmax(torch.from_numpy(clf_smoenn.decision_function(smo_te_x.detach())), dim=1)
