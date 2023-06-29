@@ -2,7 +2,7 @@
 
 This repository contains the Pytorch implementations of the following AAAI 2023 paper:
 
-Chongsheng Zhang, Yaxin Hou, Ke Chen, Shuang Cao, Gaojuan Fan, Ji Liu. Quality-Aware Self-Training on Differentiable Synthesis of Rare Relational Data. Thirty-Seventh AAAI Conference on Artificial Intelligence, 2023(AAAI 2023). &nbsp; &nbsp;[Paper]()
+Chongsheng Zhang, Yaxin Hou, Ke Chen, Shuang Cao, Gaojuan Fan, Ji Liu. Quality-Aware Self-Training on Differentiable Synthesis of Rare Relational Data. Thirty-Seventh AAAI Conference on Artificial Intelligence, 2023(AAAI 2023). &nbsp; &nbsp;[Paper](https://ojs.aaai.org/index.php/AAAI/article/view/25811)
 
 ## Introduction
  
