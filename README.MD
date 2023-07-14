@@ -2,9 +2,9 @@
 
 This repository contains the Pytorch implementations of the following AAAI 2023 paper:
 
-Chongsheng Zhang, Yaxin Hou, Ke Chen, Shuang Cao, Gaojuan Fan, Ji Liu. Quality-Aware Self-Training on Differentiable Synthesis of Rare Relational Data. Thirty-Seventh AAAI Conference on Artificial Intelligence, 2023(AAAI 2023). &nbsp; &nbsp;[Paper](https://ojs.aaai.org/index.php/AAAI/article/view/25811)
-
-DOI: https://doi.org/10.1609/aaai.v37i5.25811
+Chongsheng Zhang, Yaxin Hou, Ke Chen, Shuang Cao, Gaojuan Fan, Ji Liu. Quality-Aware Self-Training on Differentiable Synthesis of Rare Relational Data. Thirty-Seventh AAAI Conference on Artificial Intelligence, 2023(AAAI 2023). 
+&nbsp; &nbsp;[Paper](https://ojs.aaai.org/index.php/AAAI/article/view/25811)
+&nbsp; &nbsp;[DOI](https://doi.org/10.1609/aaai.v37i5.25811)
 ## Introduction
  
 This work (QAST) aims to generate realistic samples for the rare classes in a relational data. In fact, it has been a critical concern on how to utilize GAN to generate samples that are useful for imbalance learning, i.e., the generated synthetic samples should be useful for improving the imbalance learning performance. 
