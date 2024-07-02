@@ -58,7 +58,7 @@ All codes are written by Python 3.8 with:
    │
    ├──Multi-class.py
    ├──Multi-class.py
-   └──README.md
+   └──readme.md
 ```   
   
 ## Train
